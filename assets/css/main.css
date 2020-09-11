@@ -1702,7 +1702,9 @@ header .logo {
 
 header .logo img {
     float: left;
-    max-width: 160px;
+    max-width: 170px;
+    max-height: 100px;
+    overflow: hidden;
     margin-right: 3px;
 }
 
@@ -1846,9 +1848,10 @@ footer .footer_box h4.footer_title:before {
     top: 0;
 }
 
-footer .footer_header {
+
+/* footer .footer_header {
     margin-bottom: 30px;
-}
+} */
 
 footer .footer_social {
     list-style: none;
@@ -1943,24 +1946,24 @@ footer .newsletter_form .form-control {
 -------------------------------------------------------- */
 
 .btn {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.7;
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
     font-weight: 500;
-    padding: 12px 40px;
+    padding: 12px 12px;
     border-radius: 0;
     outline: 0 !important;
     border: none;
     cursor: pointer;
-    background-color: #18181c;
+    background-color: #0ea3e2e7;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
 
 .btn:hover {
     color: #18181c;
-    background-color: #fff;
+    background-color: #0e8de2;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
@@ -3425,4 +3428,10 @@ textarea.form-control {
 
 .accordion_card .card-body {
     font-size: 16px;
+}
+
+.footer_logo img {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
 }
