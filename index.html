@@ -185,7 +185,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/social_icons.css" rel="stylesheet">
-    <link rel="icon" href="assets/img/xtrofest_icon.png">
+    <link rel="icon" href="assets/img/xtrofest2.0_icon.png">
 </head>
 
 <body>
@@ -197,11 +197,11 @@
     <!--header start here -->
     <header class="header navbar fixed-top navbar-expand-md" id="navbar">
         <div class="container-fluid mr-3 px-3">
-            <a class="navbar-brand logo d-none d-lg-block" href="#">
-                <img src="assets/img/xtrofest_icon.png" alt="Xtro" />
+            <a class="navbar-brand logo d-none d-lg-block" href="index.html">
+                <img src="assets/img/xtrofest2.0_icon.png" alt="Xtro" />
             </a>
-            <a class="navbar-brand logo d-block d-lg-none" href="#">
-                <img src="assets/img/xtrofest_icon.png" alt="Xtro" />
+            <a class="navbar-brand logo d-block d-lg-none" href="index.html">
+                <img src="assets/img/xtrofest2.0_icon.png" alt="Xtro" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-text-align-right"></span>
@@ -209,13 +209,13 @@
             <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
                 <ul class="nav navbar-nav menu">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#abt">ABOUT</a>
+                        <a class="nav-link active" href="#home">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#event">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#abt">ABOUT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#sponsor">SPONSORS</a>
@@ -449,7 +449,7 @@
                                 Register Now!
                                 <i class="fa fa-ticket fa1"></i>
                             </a>
-                            <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
+                            <a target=”_blank” href="#" data-toggle="modal" data-target="#arimaModal" class="btn btn-primary btn-rounded mr10">
                                 Read more!
                                 <i class="fa fa-angle-right fa1"></i>
                             </a>
@@ -467,8 +467,8 @@
                                 Register Now!
                                 <i class="fa fa-ticket fa1"></i>
                             </a>
-                            <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
-                                Read more!
+                            <a target=”_blank” href="#" data-toggle="modal" data-target="#coderallyModal" class="btn btn-primary btn-rounded mr10">
+                                Read more! 
                                 <i class="fa fa-angle-right fa1"></i>
                             </a>
                         </div>
@@ -485,7 +485,7 @@
                                 Register Now!
                                 <i class="fa fa-ticket fa1"></i>
                             </a>
-                            <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
+                            <a target=”_blank” href="#" data-toggle="modal" data-target="#agapeModal" class="btn btn-primary btn-rounded mr10">
                                 Read more!
                                 <i class="fa fa-angle-right fa1"></i>
                             </a>
@@ -503,7 +503,7 @@
                                 Register Now!
                                 <i class="fa fa-ticket fa1"></i>
                             </a>
-                            <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
+                            <a target=”_blank” href="#" data-toggle="modal" data-target="#memeitModal" class="btn btn-primary btn-rounded mr10">
                                 Read more!
                                 <i class="fa fa-angle-right fa1"></i>
                             </a>
@@ -691,7 +691,7 @@
                     <div class="footer_box">
                         <div class="footer_header">
                             <div class="footer_logo">
-                                <img src="assets/img/xtrofest_icon.png" alt="evento">
+                                <img src="assets/img/xtrofest2.0_icon.png" alt="evento">
                             </div>
                         </div>
                         <div class="footer_box_body">
@@ -774,7 +774,142 @@
     </div>
     <!--footer end -->
 
-    <!-- jquery -->
+    <!-- Arima modal start -->
+
+    <div class="modal fade" id="arimaModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">A.R.I.M.A</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <div class="container">
+                        <div class="brand_carousel owl-carousel" id="owl2">
+                            <div class="brand_item text-center mx-auto">
+                                <a href="https://atos.net/en/" target="_blank"><img src="assets/img/brands/atos.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <a href="http://www.activegalaxy.in" target="_blank"><img src="assets/img/brands/Active%20galaxy.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <a href="https://balsamiq.com" target="_blank"><img src="assets/img/brands/balsamiq.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <a href="https://www.facebook.com/Camproad/" target="_blank"><img src="assets/img/brands/BOYKA.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <a href="https://www.bugsee.com" target="_blank"><img src="assets/img/brands/bugsee.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <a href="https://www.indiamart.com/herdsmannindustries/" target="_blank"><img src="assets/img/brands/hiland_2.png" alt="brand"></a>
+                            </div>
+                            <div class="brand_item text-center mx-auto">
+                                <img src="assets/img/brands/mc.png" alt="brand">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register now!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Arima modal end -->
+
+    <!-- coderally modal start -->
+
+    <div class="modal fade" id="coderallyModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">CODERALLY</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register now!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- coderally modal end -->
+
+    <!-- agape modal start -->
+
+    <div class="modal fade" id="agapeModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">AGAPE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register now!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- agape modal end -->
+
+    <!-- memeit modal start -->
+
+    <div class="modal fade" id="memeitModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle">MEME-IT!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register now!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- memeit modal end -->
 
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap -->
