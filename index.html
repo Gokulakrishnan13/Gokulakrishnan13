@@ -1,0 +1,714 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--==============================================counter script start==============================================-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        setInterval(function() {
+            myTimer();
+        }, 1000);
+
+        function myTimer() {
+            var ending = jQuery("#timer").attr("data-endtime"),
+                endTime = new Date(ending);
+            endTime = Date.parse(endTime) / 1000;
+            var now = new Date();
+            var tempnow = String(now);
+            tempnow = tempnow.substring(4);
+            var month = tempnow[0] + tempnow[1] + tempnow[2];
+            console.log(month + ' ' + month.length);
+            if (ending > tempnow && month == "Sep") {
+                now = Date.parse(now) / 1000;
+
+                var timeLeft = endTime - now;
+
+                var days = Math.floor(timeLeft / 86400);
+                var hours = Math.floor((timeLeft - days * 86400) / 3600);
+                var minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
+                var seconds = Math.floor(
+                    timeLeft - days * 86400 - hours * 3600 - minutes * 60
+                );
+
+                //   if (days < "10") {
+                //     days = "0" + days;
+                //   }
+                if (days < "1") {
+                    days = "0";
+                }
+                //   if (hours < "10") {
+                //     hours = "0" + hours;
+                //   }
+                if (hours < "1") {
+                    hours = "0";
+                }
+                //   if (minutes < "10") {
+                //     minutes = "0" + minutes;
+                //   }
+                if (minutes < "1") {
+                    minutes = "0";
+                }
+                //   if (seconds < "10") {
+                //     seconds = "0" + seconds;
+                //   }
+                if (seconds < "1") {
+                    seconds = "0";
+                }
+
+                $("#timer").html(
+                    "<div class='row'><div class='col-xs-12 col-lg-3 py-5' id='days'>" +
+                    days + "<span>Days</span></div>" + "<div class='col-xs-12 col-lg-3 py-5' id='hours'>" + hours + "<span>Hrs</span></div>" +
+                    "<div class='col-xs-12 col-lg-3 py-5' id='minutes'>" +
+                    minutes + "<span>Mins</span></div>" + "<div class='col-xs-12 col-lg-3 py-5' id='seconds'>" +
+                    seconds + "<span>Secs</span></div></div>"
+                );
+            } else {
+                $("#timer").html(
+                    "<div class='row' style='width:auto; height: auto'> <div class='col-xs-12 col-lg-3 py-5' style='width: 100%; height: auto; text-align: center; margin:auto; float:right;'>Now Live!</div></div>"
+                );
+            }
+
+        }
+
+
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-100px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+        $(function() {
+            var navMain = $(".navbar-collapse");
+
+            navMain.on("click", "a", null, function() {
+                navMain.collapse('hide');
+            });
+        });
+    </script>
+    <!--==============================================counter script end==============================================-->
+
+    <!--==============================================counter css end==============================================-->
+    <style>
+        #navbar {
+            position: fixed;
+            /* Make it stick/fixed */
+            width: 100%;
+            transition: top 0.3s;
+            /* Transition effect when sliding down (and up) */
+        }
+        
+        #timer {
+            text-align: center;
+            opacity: 0.9;
+            background-color: black;
+            background-position: top;
+            background-size: cover;
+            font-size: 55px;
+            color: dodgerblue;
+        }
+        
+        #days {
+            height: 3cm;
+            font-size: 55px;
+        }
+        
+        #hours {
+            height: 3cm;
+            font-size: 55px;
+        }
+        
+        #minutes {
+            height: 3cm;
+            font-size: 55px;
+        }
+        
+        #seconds {
+            height: 3cm;
+            font-size: 55px;
+        }
+        
+        @-webkit-keyframes hue {
+            from {
+                -webkit-filter: hue-rotate(0deg);
+            }
+            to {
+                -webkit-filter: hue-rotate(-360deg);
+            }
+        }
+        
+        @keyframes hue {
+            from {
+                -webkit-filter: hue-rotate(0deg);
+            }
+            to {
+                -webkit-filter: hue-rotate(-360deg);
+            }
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!--==============================================counter css end==============================================-->
+
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- ========== Title ========== -->
+    <title> XTROFEST</title>
+    <!-- ========== Favicon Ico ========== -->
+    <!-- ========== STYLESHEETS ========== -->
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts Icon CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/et-line.css" rel="stylesheet">
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <!-- Carousel CSS -->
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+
+    <!--header start here -->
+    <header class="header navbar fixed-top navbar-expand-md" id="navbar">
+        <div class="container-fluid mr-3 px-3">
+            <a class="navbar-brand logo d-none d-lg-block" href="#">
+                <img src="assets/img/logo.png" alt="Xtro" />
+            </a>
+            <a class="navbar-brand logo d-block d-lg-none" href="#">
+                <img src="assets/img/logomob.png" alt="Xtro" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-text-align-right"></span>
+        </button>
+            <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
+                <ul class="nav navbar-nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#abt">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#event">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#sponsor">SPONSORS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#contact">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--header end here-->
+
+    <!--cover section slider -->
+    <section id="home" class="home-cover">
+        <div class="cover_slider owl-carousel owl-theme">
+            <div class="cover_item" style="background: url('assets/img/bg/slider2.jpg');">
+                <div class="slider_content">
+                    <div class="slider-content-inner">
+                        <div class="container">
+                            <div class="slider-content-center">
+                                <h5 class="cover-title">Department of Information Technology Proudly Presents...
+                                </h5>
+                                <strong class="cover-xl-text">XTROFEST 2.0</strong>
+                                <p class="cover-date">
+                                    28<sup><span style="text-transform:lowercase;">th</sup></span> & 29<sup><span style="text-transform:lowercase;">th</span></sup> September 2020 @&nbsp;Sri Sairam Engineering College, Chennai
+                                </p><br><br>
+                                <h2 class="cover-title">
+                                    <span style="font-weight: 400;">Dream <span style="color:#f50136; font-weight: 600;"> IT</span>! Believe <span style="color:#f50136; font-weight: 600;"> IT</span>! Achieve <span style="color:#f50136; font-weight: 600;"> IT</span>!</span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cover_item" style="background: url('assets/img/bg/slider.jpg');">
+                <div class="slider_content">
+                    <div class="slider-content-inner">
+                        <div class="container">
+                            <div class="slider-content-center">
+                                <strong> <p class="cover-xl-text" style="text-transform: uppercase;" >A.R.I.M.A</p></strong>
+                                <br>
+                                <h3 class="cover-title">
+                                    <span style="color:#f50136; font-weight: 600;">A</span>ccessible <span style="color:#f50136; font-weight: 600;">R</span>ich <span style="color:#f50136; font-weight: 600;">I</span>nternet <span style="color:#f50136; font-weight: 600;">M</span>odern
+                                    <span style="color:#f50136; font-weight: 600;">A</span>pplication</h3>
+                                <br>
+                                <p class="cover-date">
+                                    28<sup><span style="text-transform:lowercase;">th</sup></span> & 29<sup><span style="text-transform:lowercase;">th</span></sup> September 2020 @&nbsp;Sri Sairam Engineering College, Chennai
+                                </p>
+                                <a target=”_blank” href="https://intelligence.hackerearth.com/" class=" btn btn-primary btn-rounded">
+                                Register Now
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cover_item" style="background: url('assets/img/bg/slider1.jpg');">
+                <div class="slider_content">
+                    <div class="slider-content-inner">
+                        <div class="container">
+                            <div class="slider-content-center">
+                                <strong class="cover-xl-text">CODERALLY</strong>
+                                <h3 class="cover-title">
+                                    <span style="font-weight: 300;">Where intellectuals clash</span>
+                                </h3>
+                                <p class="cover-date">
+                                    28<sup><span style="text-transform:lowercase;">th</sup></span> & 29<sup><span style="text-transform:lowercase;">th</span></sup> September 2020 @&nbsp;Sri Sairam Engineering College, Chennai
+                                </p>
+                                <a target=”_blank” href="https://contrivance.hackerearth.com/" class=" btn btn-primary btn-rounded">
+                                Register Now
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cover_item" style="background: url('assets/img/bg/slider1.jpg');">
+                <div class="slider_content">
+                    <div class="slider-content-inner">
+                        <div class="container">
+                            <div class="slider-content-center">
+                                <strong class="cover-xl-text">AGAPE</strong>
+                                <h3 class="cover-title">
+                                    <span style="font-weight: 300;">May the odds be ever in your favor</span>
+                                </h3>
+                                <p class="cover-date">
+                                    28<sup><span style="text-transform:lowercase;">th</sup></span> & 29<sup><span style="text-transform:lowercase;">th</span></sup> September 2020 @&nbsp;Sri Sairam Engineering College, Chennai
+                                </p>
+                                <a target=”_blank” href="https://contrivance.hackerearth.com/" class=" btn btn-primary btn-rounded">
+                                Register Now
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cover_nav">
+            <ul class="cover_dots">
+                <li class="active" data="0"><span>1</span></li>
+                <li data="1"><span>2</span></li>
+                <li data="2"><span>3</span></li>
+                <li data="3"><span>4</span></li>
+            </ul>
+        </div>
+    </section>
+    <!--cover section slider end -->
+
+    <!--EVENTS-->
+    <section class="pt100 pb100" id="event">
+        <div class="container">
+            <div class="section_title mb50">
+                <h3 class="title pt-5">
+                    Events
+                </h3>
+            </div>
+        </div>
+        <div class="container mx-auto event_box">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <img class="img-responsive" style="align-content: center" src="assets/img/logo.png" alt="event" style="max-height: 30%; max-width: 30%">
+                    </div>
+                    <div class="event_info col-sm-12 col-md-6 col-lg-8">
+                        <h6 class="event_title">General Instructions:</h6><br>
+                        <h6 class="title">STEP 1: Create an account in HackerEarth</h6>
+                        <h6 class="title">STEP 2: Register for the desired Event at HackerEarth</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end  -->
+
+        <!-- <div class="container mx-auto event_box">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <img class="img-responsive" style="align-content: center" src="assets/img/events/event1.jpeg" alt="event" style="max-height: 80%; max-width: 80%">
+                </div>
+                <div class="event_info col-sm-12 col-md-6 col-lg-8">
+                    <h5 id="int" class="event_title" style="text-transform: uppercase; font-size:35px;">Int elligence;</h5>
+
+                    <div class="event_word">
+                        <h4 style="font-weight: 500;">TEAM SIZE: 1-4 members</h4>
+                        <br>
+                        <h5>Your eccentric thoughts meets the world here!!!</h5>
+                        <p>Hackathon is the technofest for engineering aspirants to bring out their cool ideas, contemplate, create and expose their upshot to the intellectual audience. int Elligence is one such prestigious national level 24 hour hackathon
+                            that encourages students to identify problems and provide ideal solution to it which will be examined, scrutinized and evaluated by the extraordinary panel of judges from various industries and institutions. Every futuristic
+                            solution will be acknowledged and honoured with worthy awards, rewards, internship offers and what not!!!!</p>
+                    </div>
+                    <div class="col-8 mx-auto">
+                        <a target=”_blank” href="https://intelligence.hackerearth.com/" class=" btn btn-info btn-rounded" style="color:red;">
+                                Registrations Closed
+                 </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container mx-auto event_box">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <img class="img-responsive" style="align-content: center" src="assets/img/events/event2.jpg" alt="event" style="max-height: 80%; max-width: 80%">
+                </div>
+                <div class="event_info col-sm-12 col-md-6 col-lg-8">
+                    <h5 id="con" class="event_title" style="font-size: 35px;">Contrivance</h5>
+                    <div class="event_word">
+                        <h4 style="font-weight: 500;">TEAM SIZE: 1-3 members</h4>
+                        <br>
+                        <h5>Contrive the Cognizance</h5>
+                        <p>Products rule the world of sophistication. Every new day yet another product becomes an inevitable part of our life with the help of growing technologies. Contrivance welcomes engineers from various departments like Computer Science,
+                            Electricals, Electronics and Instrumentation to display and demonstrate their innovation which could be the next megahit product of the year. Students with revolutionary and new-fangled products will be awarded with exotic
+                            gifts and prizes and will be honoured for being the best innovation of the eve.</p>
+                    </div>
+                    <div class=" col-8 mx-auto">
+                        <a target=”_blank” href="https://contrivance.hackerearth.com/" class=" btn btn-info btn-rounded" style="color:red;">
+                                Registrations closed
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto event_box">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <img class="img-responsive" style="align-content: center" src="assets/img/events/event3.jpeg" alt="event" style="max-height: 80%; max-width: 80%">
+                </div>
+                <div class="event_info col-sm-12 col-md-6 col-lg-8">
+                    <h5 id="pit" class="event_title" style="margin-top: inherit;">pitch Fest</h5>
+                    <div class="event_word">
+                        <h4 style="font-weight: 400;">Godsend Event for the participants of int elligence; and Contrivance</h4>
+                        <br>
+                        <h5>Unleash the speaker in you</h5>
+                        <p>Have a mic and preach the lessons that you have grasped and mastered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto event_box">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <img class="img-responsive" style="align-content: center" src="assets/img/events/event4.jpeg" alt="event" style="max-height: 80%; max-width: 80%">
+                </div>
+                <div class="event_info col-sm-12 col-md-6 col-lg-8">
+                    <h5 id="cod" class="event_title" style="margin-top: inherit;">Code day</h5>
+                    <div class="event_word">
+                        <h4 style="font-weight: 400;">Exclusively for the students of Sri Sairam Engineering College</h4>
+                        <br>
+                        <h5>Code Compile Run!!!!</h5>
+
+                        <p>Hey Sairamites!!!! The first set of students to be fortunate enough to participate in intra-college coding event where you will be allowed to crack coding challenges for continuous 2 hours and the one who has cracked maximum challenges
+                            efficiently and significantly will be chosen as the best programmer of the day.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Events cards start -->
+
+        <!-- Events cards end -->
+
+    </section>
+    <!--Events end-->
+
+    <!--event countdown -->
+    <div class="container">
+        <h4 class="title">And it all starts in...</h4>
+    </div>
+    <div class="container-fluid mx-0 px-0" id="timer" data-endtime="Sep 28 2020 09:00:00 GMT+0530 (India Standard Time)">
+    </div>
+    <!--event count down end-->
+
+    <!-- About us start -->
+    <section class="pt100 pb100" id="abt">
+        <div class="container">
+            <div class="section_title">
+                <h3 class="title">
+                    About Us
+                </h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                    <h4>Our Institution</h4>
+                    <p>
+                        A well defined vision, highly committed mission and dedicated leadership facilitates Sri Sairam Engineering College to be in the best of educational institutions in the country. Since its inception , our Institution has tried its hands in diverse fields
+                        to prove its excellence in all spheres.
+
+
+                    </p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4>Our Department</h4>
+                    <p>
+                        Teaching alone does not make any institution one among the best. Our department finds pleasure in organising many events throughout the year, some of which are Symposiums, Conferences and events in association with the IEEE Society. The department makes
+                        the students industry-ready with the best training in the RedHat Linux Certification, Oracle Academy Centre and CISCO Academy Centre.
+                    </p>
+                </div>
+            </div>
+
+            <!--event features-->
+            <!-- <div class="row justify-content-center mt30">
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="icon_box_one">
+                        <i class="lnr lnr-rocke"></i>
+                        <div class="content">
+                            <h4>A.R.I.M.A</h4>
+                            <p>
+                                A.R.I.M.A is a 24-hour hackathon where innovations & inventions grapple together.
+                                <br><br>
+                                <strong>Members :&nbsp;</strong>1-4
+                                <br>
+                                <strong>Timings :&nbsp;</strong><br>11:00 A.M(21 Aug 2019) &nbsp;to <br> 11:00 A.M(22 Aug 2019)
+                            </p>
+                            <a href="#event">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="icon_box_one">
+                        <i class="lnr lnr-rocke"></i>
+                        <div class="content">
+                            <h4>contrivance</h4>
+                            <p>Contrivance is a product demonstration event to promote one's idea.
+                                <br><br>
+                                <strong>Members :&nbsp;</strong>1-3
+                                <br>
+                                <strong>Timings :&nbsp;</strong><br>11:00 A.M to 04:00 P.M<br>(21 Aug 2019).
+
+                            </p>
+                            <br>
+                            <a href="#event">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="icon_box_one">
+                        <i class="lnr lnr-bullhor"></i>
+                        <div class="content">
+                            <h4>Pitch fest</h4>
+                            <p>"Knowledge is gained by sharing,not by hoarding it&nbsp;!"<br><br>Its an arena to exhort your eminent ideas.
+                                <br>
+                                <br>
+                                <strong>Date :</strong> 22nd Aug 2019.
+                                <br>
+                                <br>
+                            </p>
+                            <br>
+                            <a href="#event">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="icon_box_one">
+                        <i class="lnr lnr-rocke"></i>
+                        <div class="content">
+                            <h4>Code day</h4>
+                            <p>
+                                The Code day is a special event where one's coding knowledge will be evaluated.
+                                <br>
+                                <br>
+                                <strong>Note :</strong>&nbsp;Code day is an special event conducted only for the students of Sri Sairam Engineering College.
+                            </p>
+                            <br>
+                            <a href="#event">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+            <!--event features end-->
+        </div>
+    </section>
+    <!--about us end -->
+
+    <!--sponsors section -->
+    <section class="bg-gray pt100 pb100" id="sponsor">
+        <div class="container">
+            <div class="section_title mb50">
+                <h3 class="title">
+                    our eminent Sponsors
+                </h3>
+            </div>
+            <h3 class="cover-title" style="text-align: center;">
+                <span style="font-weight: 400;">Coming soon!</span>
+            </h3>
+            <!-- <div class="brand_carousel owl-carousel" id="owl2">
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://atos.net/en/" target="_blank"><img src="assets/img/brands/atos.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="http://www.activegalaxy.in" target="_blank"><img src="assets/img/brands/Active%20galaxy.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://balsamiq.com" target="_blank"><img src="assets/img/brands/balsamiq.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://www.facebook.com/Camproad/" target="_blank"><img src="assets/img/brands/BOYKA.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://www.bugsee.com" target="_blank"><img src="assets/img/brands/bugsee.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://www.indiamart.com/herdsmannindustries/" target="_blank"><img src="assets/img/brands/hiland_2.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <img src="assets/img/brands/mc.png" alt="brand">
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://nyxwolves.com" target="_blank"><img src="assets/img/brands/nyx.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="http://www.ramcocements.in" target="_blank"><img src="assets/img/brands/RAMCO.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <img src="assets/img/brands/rema.png" alt="brand">
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="https://www.voicesnap.com" target="_blank"><img src="assets/img/brands/voice.png" alt="brand"></a>
+                </div>
+                <div class="brand_item text-center mx-auto">
+                    <a href="http://vrsavvy.co/" target="_blank"><img src="assets/img/brands/vr.png" alt="brand"></a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <!--brands section end-->
+    <!--footer start -->
+    <footer>
+        <div class="container" id="contact">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                    <div class="footer_box">
+                        <div class="footer_header">
+                            <div class="footer_logo">
+                                <img src="assets/img/logo.png" alt="evento">
+                            </div>
+                        </div>
+                        <div class="footer_box_body">
+                            <ul class="footer_social">
+                                <!-- <li>
+                                <a href="https://www.facebook.com/xtro.fest.5"><i class="ion-social-facebook"></i></a>
+                            </li> -->
+                                <li>
+                                    <a href="https://www.instagram.com/Xtrofest_2k19/"><i class="ion-social-instagram"></i></a>
+                                </li>
+                            </ul>
+                            <p class="pt5"> Reach us at : </p>
+                            <ul class="icon_list pt2">
+                                <li>
+                                    <i class="ion-ios-telephone"></i>
+                                    <span style="font-size:20px;color:whitesmoke">
+                                       Staff Co-ordinator:<br>
+                                       Mrs.R.Ranjana:&nbsp;9841133942
+                                </span>
+                                </li>
+                                <li>
+                                    <i class="ion-ios-telephone"></i>
+                                    <span style="font-size:20px;color:whitesmoke">
+                                       Student Co-ordinators:<br>Praveen: 8667007408<br>
+                               Ajay: 9962194078
+                                </span>
+                                </li>
+                                <li>
+                                    <i class="ion-email-unread"></i>
+                                    <span style="font-size:20px;color:whitesmoke">
+                                    xtrofest2k19@gmail.com
+                                </span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mx-auto">
+                    <div class="footer_box">
+                        <div class="footer_header">
+                            <h4 class="footer_title" style="color:white; ">
+                                Location
+                            </h4>
+                        </div>
+                        <div class="footer_box_body d-block d-md-none">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.183422847543!2d80.05520681435364!3d12.960111918638008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f51f619c9533%3A0x3293c9321c6264b8!2sSri+Sairam+Engineering+College!5e0!3m2!1sen!2sin!4v1563590281781!5m2!1sen!2sin"
+                                width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                        <div class="footer_box_body d-none d-md-block">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.183422847543!2d80.05520681435364!3d12.960111918638008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f51f619c9533%3A0x3293c9321c6264b8!2sSri+Sairam+Engineering+College!5e0!3m2!1sen!2sin!4v1563590281781!5m2!1sen!2sin"
+                                width="550" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <p>
+                        <b>Address : Sairam Campus, Sai Leo Nagar, West Tambaram<br> Chennai, Tamil Nadu 600044   
+                                <br>Phone: 044 2251 2222</b>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright_footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-12">
+                    <p style="color:#F50136;font-weight:bolder;font-size:14px;text-align: center;">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer end -->
+
+    <!-- jquery -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <!--slick carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!--parallax -->
+    <script src="assets/js/parallax.min.js"></script>
+    <!--Counter up -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!--Counter down -->
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <!-- WOW JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Custom js -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
