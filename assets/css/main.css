@@ -123,7 +123,7 @@ a:focus,
 a:active {
     text-decoration: none;
     outline: none;
-    color: #838383;
+    /* color: #f50136; */
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
@@ -201,7 +201,7 @@ ul.nosyely_list {
 
 .brand_item img {
     display: block;
-    max-width: 200px;
+    max-width: 150px;
     margin: 0 auto;
 }
 
@@ -3434,4 +3434,37 @@ textarea.form-control {
     max-width: 90%;
     max-height: 90%;
     overflow: hidden;
+}
+
+.filters {
+    text-align: center;
+}
+
+.filters ul {
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.filters ul li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px;
+    margin: 5px 25px 5px 10px;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.filters ul li:hover {
+    color: #f50136;
+}
+
+.filters ul li.active {
+    color: #f50136;
+    border: solid 5px #838383;
+}
+
+.filters ul li a.active {
+    color: #f50136;
 }

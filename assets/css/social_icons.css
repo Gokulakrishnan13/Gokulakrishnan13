@@ -1,8 +1,3 @@
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
 p>a:hover {
     color: #d9d9d9;
     text-decoration: underline;
@@ -60,6 +55,11 @@ ul.social-icons {
     padding-top: 10px;
     margin-bottom: 8px;
     display: flex;
+    justify-content: center;
+}
+
+.card_content {
+    text-align: justify;
 }
 
 .register {
@@ -126,4 +126,12 @@ ul.social-icons {
 
 .fa-linkedin:hover {
     background-color: #0073a4;
+}
+
+.tech_stack a {
+    cursor: grab;
+}
+
+.tech_stack a:active {
+    cursor: grabbing;
 }

@@ -72,8 +72,6 @@
 
         }
 
-
-
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
@@ -90,6 +88,23 @@
 
             navMain.on("click", "a", null, function() {
                 navMain.collapse('hide');
+            });
+        });
+
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function() {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
             });
         });
     </script>
@@ -158,7 +173,22 @@
         }
         
         .card {
-            background-color: #e9ecef !important;
+            background-color: #ffffff !important;
+            z-index: 20 !important;
+            border: 2px solid #fd5479 !important;
+            border-radius: 50px !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: none;
+            border-radius: 100px !important;
+            background-color: #f50136 !important;
+            transition: all 300ms ease-in-out;
+            color: white;
         }
     </style>
 
@@ -438,11 +468,11 @@
         <!-- Events cards start -->
         <div class="container mx-auto event_box">
             <div class="row grid">
-                <div class="col-md-8 col-lg-6 text-center mb10">
+                <div class="col-md-8 col-lg-6 text-center mb25">
                     <div class="card card-body">
                         <img class="image img-fluid" src="assets/img/events/arima.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p class="card_content">Brace yourself to experience a stupendous 24 hour virtual hackathon where participants unveil the developer within themselves and come up with viable solutions to solve real-time problems which will be scrutinized by the extraordinary
+                            panel of judges from various industries and institutions.Showcase your skills to win awards , rewards and much more!
                         </p>
                         <div class="card_buttons">
                             <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
@@ -456,13 +486,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 text-center mb10">
+                <div class="col-md-8 col-lg-6 text-center mb25">
                     <div class="card card-body card_color">
                         <img class="image img-fluid" src="assets/img/events/coderally.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p class="card_content">Coderally is an online programming tournament which provides a platform to test your programming and logical skills. In this event you will be pitched against various problem statements which are to be completed within the stipulated
+                            time. This event will consist of a preliminary and semi-final coding round from which participants will be shortlisted for the challenging final showdown.
                         </p>
-                        <div class="card_buttons">
+                        <div class="card_buttons align-items-center">
                             <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
                                 Register Now!
                                 <i class="fa fa-ticket fa1"></i>
@@ -477,8 +507,8 @@
                 <div class="col-md-8 col-lg-6 text-center">
                     <div class="card card-body card_color">
                         <img class="image img-fluid" src="assets/img/events/agape.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p class="mb40 card_content">Agape is a non-tech fiesta with surprise events, where the participants experience the ultimate amusement. Brightest blazes of happiness are commonly kindled by unexpected sparks. Join us to be bombarded with a fireball of these
+                            sparks.
                         </p>
                         <div class="card_buttons">
                             <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
@@ -495,8 +525,8 @@
                 <div class="col-md-8 col-lg-6 text-center">
                     <div class="card card-body card_color">
                         <img class="image img-fluid" src="assets/img/events/memeit.png" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p class="card_content">Art your thought ..express your ideas from your heart of imagination. Meme gives you instant happiness and when they are created by you ,it takes you to the peak of excitement. If these are you thoughts when you come across a trending
+                            meme -then my friend ,you have arrived at the right platform to unleash the meme-Lord within you.
                         </p>
                         <div class="card_buttons">
                             <a target=”_blank” href="#" class="btn btn-primary btn-rounded mr10">
@@ -786,44 +816,79 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <div class="filters">
+                            <ul class="nav nav-tabs">
+                                <li class="initialTab"><a class="active" data-toggle="tab" href="#initialTab">Initial</a></li>
+                                <li class="eventDayTab"><a data-toggle="tab" href="#eventDayTab">Event day</a></li>
+                            </ul>
+                        </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="initialTab">
+                                Initial Instructions.
+                                <ol>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                </ol>
+                                <p>Problem Statement</p>
+                                <p>Statement 1</p>
+                                <p>Further instuctions</p>
+                                <p>may be a drive file link</p>
+                                <a target=”_blank” href="#" data-toggle="modal" data-target="#memeitModal" class="btn btn-primary btn-rounded mr10">
+                                    Read more!
+                                    <i class="fa fa-angle-right fa1"></i>
+                                </a>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="eventDayTab">
+                                Event day instructions. Initial Instructions.
+                                <ol>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                    <li>Sample</li>
+                                </ol>
+                                <p>Problem Statement</p>
+                                <p>Statement 1</p>
+                                <p>Further instuctions</p>
+                                <p>may be a drive file link</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container">
-                        <div class="brand_carousel owl-carousel" id="owl2">
+                        <h6> Technology Stack</h6>
+                        <div class="brand_carousel owl-carousel tech_stack" id="owl2">
                             <div class="brand_item text-center mx-auto">
-                                <a href="https://atos.net/en/" target="_blank"><img src="assets/img/brands/atos.png" alt="brand"></a>
+                                <a title="Artificial Intelligence"><img src="assets/img/techStack/AI.png" alt="Artificial Intelligence">Artificial Intelligence</a>
                             </div>
                             <div class="brand_item text-center mx-auto">
-                                <a href="http://www.activegalaxy.in" target="_blank"><img src="assets/img/brands/Active%20galaxy.png" alt="brand"></a>
+                                <a title="Machine Learning"><img src="assets/img/techStack/machineLearning.png" alt="Machine Learning">Machine Learning</a>
                             </div>
                             <div class="brand_item text-center mx-auto">
-                                <a href="https://balsamiq.com" target="_blank"><img src="assets/img/brands/balsamiq.png" alt="brand"></a>
+                                <a title="Augmented/Virtual Reality"><img src="assets/img/techStack/arvr4.jpg" alt="Augmented/Virtual Reality">Augmented/Virtual Reality</a>
                             </div>
                             <div class="brand_item text-center mx-auto">
-                                <a href="https://www.facebook.com/Camproad/" target="_blank"><img src="assets/img/brands/BOYKA.png" alt="brand"></a>
+                                <a title="Block Chain"><img src="assets/img/techStack/blockChain.png" alt="Block Chain">Block Chain</a>
                             </div>
                             <div class="brand_item text-center mx-auto">
-                                <a href="https://www.bugsee.com" target="_blank"><img src="assets/img/brands/bugsee.png" alt="brand"></a>
+                                <a title="Cloud Computing"><img src="assets/img/techStack/cloudComputing1.png" alt="Cloud Computing">Cloud Computing</a>
                             </div>
                             <div class="brand_item text-center mx-auto">
-                                <a href="https://www.indiamart.com/herdsmannindustries/" target="_blank"><img src="assets/img/brands/hiland_2.png" alt="brand"></a>
-                            </div>
-                            <div class="brand_item text-center mx-auto">
-                                <img src="assets/img/brands/mc.png" alt="brand">
+                                <a title="Cyber Security"><img src="assets/img/techStack/cyberSecurity.png" alt="Cyber Security">Cyber Security</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Register now!</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Register now!</button>
             </div>
         </div>
+    </div>
     </div>
     <!-- Arima modal end -->
 
@@ -839,12 +904,17 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Event day instructions.
+                    <ol>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                    </ol>
+                    <p>Problem Statement</p>
+                    <p>Statement 1</p>
+                    <p>Further instuctions</p>
+                    <p>may be a drive file link</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -867,12 +937,17 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Event day instructions.
+                    <ol>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                    </ol>
+                    <p>Problem Statement</p>
+                    <p>Statement 1</p>
+                    <p>Further instuctions</p>
+                    <p>may be a drive file link</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -895,12 +970,17 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Event day instructions.
+                    <ol>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                        <li>Sample</li>
+                    </ol>
+                    <p>Problem Statement</p>
+                    <p>Statement 1</p>
+                    <p>Further instuctions</p>
+                    <p>may be a drive file link</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -910,6 +990,10 @@
         </div>
     </div>
     <!-- memeit modal end -->
+
+    <!-- back to top btn -->
+    <a id="back-to-top" href="#" class="btn back-to-top" title="To top>" role="button"><i class="fa fa-chevron-up"></i></a>
+    <!-- back to top btn -->
 
     <script src="assets/js/jquery.min.js"></script>
     <!-- bootstrap -->
