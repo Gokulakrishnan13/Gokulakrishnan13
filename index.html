@@ -107,6 +107,156 @@
                 return false;
             });
         });
+
+        var memphisFun = function() {
+            var theta = ($(window).scrollTop() / 180) % Math.PI;
+            $(".kz-ros-left").css({
+                transform: "rotate(" + theta + "rad)"
+            });
+            $(".kz-ros-right").css({
+                transform: "rotate(-" + theta + "rad)"
+            });
+        };
+
+        $(window).ready(function() {
+            var scroll = new SmoothScroll('a[href*="#"]');
+            memphisFun();
+        });
+
+        $(window).scroll(function() {
+            memphisFun();
+        });
+
+        // Arima faq
+        var currentFAQ1 = -1;
+
+        function toggleFAQ1(index) {
+            let elem = $(`.arimatab .faq:nth-child(${index})`);
+
+            if (currentFAQ1 > 0) {
+                let e = $(`.arimatab .faq:nth-child(${currentFAQ1})`);
+                e.find("p:first-child span").removeClass("active");
+                e.removeClass("active");
+                e.find("p:nth-child(2)").css("max-height", 0);
+
+                if (currentFAQ1 === index) {
+                    return (currentFAQ1 = -1);
+                }
+                currentFAQ1 = -1;
+            }
+
+            currentFAQ1 = index;
+            elem.find("p:first-child span").addClass("active");
+            let e = elem.find("p:nth-child(2)");
+            e.css("max-height", e.get(0).scrollHeight);
+
+            elem.addClass("active");
+        }
+
+        // coderally faq
+        var currentFAQ2 = -1;
+
+        function toggleFAQ2(index) {
+            let elem = $(`.coderallytab .faq:nth-child(${index})`);
+
+            if (currentFAQ2 > 0) {
+                let e = $(`.coderallytab .faq:nth-child(${currentFAQ2})`);
+                e.find("p:first-child span").removeClass("active");
+                e.removeClass("active");
+                e.find("p:nth-child(2)").css("max-height", 0);
+
+                if (currentFAQ2 === index) {
+                    return (currentFAQ2 = -1);
+                }
+                currentFAQ2 = -1;
+            }
+
+            currentFAQ2 = index;
+            elem.find("p:first-child span").addClass("active");
+            let e = elem.find("p:nth-child(2)");
+            e.css("max-height", e.get(0).scrollHeight);
+
+            elem.addClass("active");
+        }
+
+        // Agape faq
+        var currentFAQ3 = -1;
+
+        function toggleFAQ3(index) {
+            let elem = $(`.agapetab .faq:nth-child(${index})`);
+
+            if (currentFAQ3 > 0) {
+                let e = $(`.agapetab .faq:nth-child(${currentFAQ3})`);
+                e.find("p:first-child span").removeClass("active");
+                e.removeClass("active");
+                e.find("p:nth-child(2)").css("max-height", 0);
+
+                if (currentFAQ3 === index) {
+                    return (currentFAQ3 = -1);
+                }
+                currentFAQ3 = -1;
+            }
+
+            currentFAQ3 = index;
+            elem.find("p:first-child span").addClass("active");
+            let e = elem.find("p:nth-child(2)");
+            e.css("max-height", e.get(0).scrollHeight);
+
+            elem.addClass("active");
+        }
+
+        // memeit faq
+        var currentFAQ4 = -1;
+
+        function toggleFAQ4(index) {
+            let elem = $(`.memeittab .faq:nth-child(${index})`);
+
+            if (currentFAQ4 > 0) {
+                let e = $(`.memeittab .faq:nth-child(${currentFAQ4})`);
+                e.find("p:first-child span").removeClass("active");
+                e.removeClass("active");
+                e.find("p:nth-child(2)").css("max-height", 0);
+
+                if (currentFAQ4 === index) {
+                    return (currentFAQ4 = -1);
+                }
+                currentFAQ4 = -1;
+            }
+
+            currentFAQ4 = index;
+            elem.find("p:first-child span").addClass("active");
+            let e = elem.find("p:nth-child(2)");
+            e.css("max-height", e.get(0).scrollHeight);
+
+            elem.addClass("active");
+        }
+
+        var initialPane = "arimaPane";
+
+        function togglePane(paneVal) {
+            if (initialPane == paneVal) {
+                return null;
+            }
+            if (initialPane == 'arimaPane') {
+                if (currentFAQ1 > 0) {
+                    toggleFAQ1(currentFAQ1);
+                }
+            } else if (initialPane == 'coderallyPane') {
+                if (currentFAQ2 > 0) {
+                    toggleFAQ2(currentFAQ2);
+                }
+            } else if (initialPane == 'agapePane') {
+                if (currentFAQ3 > 0) {
+                    toggleFAQ3(currentFAQ3);
+                }
+            } else if (initialPane == 'memeitPane') {
+                if (currentFAQ4 > 0) {
+                    toggleFAQ4(currentFAQ4);
+                }
+            }
+            initialPane = paneVal;
+            return null;
+        }
     </script>
     <!--==============================================counter script end==============================================-->
 
@@ -245,10 +395,16 @@
                         <a class="nav-link " href="#event">EVENTS</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link " href="#kz-section-schedule">SCHEDULE</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " href="#abt">ABOUT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#sponsor">SPONSORS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#faq">FAQs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#contact">CONTACT US</a>
@@ -466,6 +622,7 @@
         </div> -->
 
         <!-- Events cards start -->
+        <img class="kz-ros-right memphis memphis1" src="assets/img/bgdesign/dark/butters.png" alt="butters" style="transform: rotate(0rad);">
         <div class="container mx-auto event_box">
             <div class="row grid">
                 <div class="col-md-8 col-lg-6 text-center mb25">
@@ -541,6 +698,7 @@
                     </div>
                 </div>
             </div>
+            <img class="kz-ros-left memphis memphis2" src="assets/img/bgdesign/dark/noah.png" alt="butters" style="transform: rotate(0rad);">
         </div>
         <!-- Events cards end -->
 
@@ -557,8 +715,93 @@
     </section>
     <!--event count down end-->
 
+    <!-- Schedule section start -->
+    <section id="kz-section-schedule" class="kz-section-schedule kz-section-padding pb100" style="background-color: #f5f3f3;">
+        <img class="kz-ros-left memphis memphis3" src="assets/img/bgdesign/dark/sparky.png" alt="butters" style="transform: rotate(0rad);">
+        <div class="container">
+            <div class="section_title mb2 0">
+                <h3 class="title">
+                    Schedule
+                </h3>
+            </div>
+        </div>
+        <div class="kz-day-title">
+            <h4 class="title pt-5">Day 1</h4>
+        </div>
+        <div class="kz-schedule-container schedule_day1">
+            <div class="kz-day-container">
+                <div class="kz-day-item accent">
+                    <h4>Inaugral<span>9:00 am</span></h4>
+                    <p>Sample single line content.</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Getting started...<span>11:00 am</span></h4>
+                    <p>Allocating participants in respective arenas.</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>A.R.I.M.A<span>11:30 am</span></h4>
+                    <p>Instructions and problem statement discussion.</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Coderally;<span>11:30 am</span></h4>
+                    <p>Prelims- Start code-clashing</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Agape<span>11:30 am</span></h4>
+                    <p>Mystery begins</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>A.R.I.M.A<span>12:00 pm</span></h4>
+                    <p>Start hacking</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Agape<span>02:00 pm</span></h4>
+                    <p>Mystery continues</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Coderally;<span>03:00 pm</span></h4>
+                    <p>Round 1: Fight</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>A.R.I.M.A<span>03:00 pm</span></h4>
+                    <p>Evaluation: Round 1</p>
+                </div>
+            </div>
+        </div>
+        <img class="kz-ros-left memphis memphis5" src="assets/img/bgdesign/dark/wheezy.png" alt="butters" style="transform: rotate(0rad);">
+        <div class="kz-day-title">
+            <h4 class="title pt-5">Day 2</h4>
+        </div>
+        <div class="kz-schedule-container">
+            <div class="kz-day-container">
+                <div class="kz-day-item accent">
+                    <h4>A.R.I.M.A<span>12:00 am</span></h4>
+                    <p>Evaluation: Round 2</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Coderally;<span>10:00 am</span></h4>
+                    <p>Finally- Crack IT! Win IT!</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Agape<span>10:00 am</span></h4>
+                    <p>Mystery finally</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>A.R.I.M.A<span>10:00 am</span></h4>
+                    <p>Final Evaluation</p>
+                </div>
+                <div class="kz-day-item accent">
+                    <h4>Valedictory<span>02:00 pm</span></h4>
+                    <p>We made IT!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule section end -->
+
     <!-- About us start -->
     <section class="pb100" id="abt">
+        <img class="kz-ros-left memphis memphis4" src="assets/img/bgdesign/dark/tangy.png" alt="butters" style="transform: rotate(0rad);">
         <div class="container">
             <div class="section_title">
                 <h3 class="title">
@@ -581,6 +824,41 @@
                     </p>
                 </div>
             </div>
+
+            <div class="section_title">
+                <h3 class="title">
+                    Xtrofest memories...
+                </h3>
+            </div>
+            <div class="container">
+                <div class="brand_carousel owl-carousel tech_stack" id="owl2">
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample1.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample2.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample3.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample4.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample5.png" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample6.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample7.jpg" alt="Xtrofest"></a>
+                    </div>
+                    <div class="slide_item text-center mx-auto mr40">
+                        <a title="Xtrofest"><img src="assets/img/sampleBG/sample8.jpg" alt="Xtrofest"></a>
+                    </div>
+                </div>
+            </div>
+
 
             <!--event features-->
             <!-- <div class="row justify-content-center mt30">
@@ -662,7 +940,7 @@
     <!--about us end -->
 
     <!--sponsors section -->
-    <section class="bg-gray pb100" id="sponsor">
+    <section class="bg-gray pb100 mb100" id="sponsor">
         <div class="container">
             <div class="section_title mb50">
                 <h3 class="title">
@@ -713,6 +991,85 @@
         </div>
     </section>
     <!--brands section end-->
+
+    <!-- faq section start -->
+    <section class="pb100" id="faq" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section_title">
+                <h3 class="title">
+                    FAQs
+                </h3>
+            </div>
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <div class="filters">
+                    <ul class="nav nav-tabs">
+                        <li class="arimapane"><a class="active arimaPane" onclick="togglePane('arimaPane')" data-toggle="tab" href="#arimaTab">A.R.I.M.A</a></li>
+                        <li class="coderallypane"><a class="coderallyPane" onclick="togglePane('coderallyPane')" data-toggle="tab" href="#coderallyTab">Coderally;</a></li>
+                        <li class="agapepane"><a class="agapePane" onclick="togglePane('agapePane')" data-toggle="tab" href="#agapeTab">Agape</a></li>
+                        <li class="memeitpane"><a class="memeitPane" onclick="togglePane('memeitPane')" data-toggle="tab" href="#memeitTab">MemeIT!</a></li>
+                    </ul>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane arimatab active" id="arimaTab">
+                        Arima
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ1(1)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ1(2)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane coderallytab" id="coderallyTab">
+                        Coderally;
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ2(1)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ2(2)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane agapetab" id="agapeTab">
+                        Agape
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ3(1)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ3(2)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane memeittab" id="memeitTab">
+                        MemeIT
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ4(1)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                        <div class="faq">
+                            <p>Does it cost anything for applying? <span onclick="toggleFAQ4(2)" class=""></span></p>
+                            <p style="max-height: 0px;">No - our events are always awesome and <span class="primary">free of charge.</span> All we ask for is
+                                <span class="accent">your passion and dedication</span> to code this world for better. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- faq section end -->
+
     <!--footer start -->
     <footer>
         <div class="container" id="contact">
