@@ -69,7 +69,7 @@ $(document).ready(function() {
     $(".cover_slider").owlCarousel({
         loop: true,
         autoplay: true,
-        autoplayTimeout: 10000,
+        autoplayTimeout: 4000,
         smartSpeed: 1000,
         autoplayHoverPause: false,
         dots: true,
@@ -80,7 +80,7 @@ $(document).ready(function() {
         dotsContainer: '.cover_dots'
     });
 
-    $(".brand_carousel").owlCarousel({
+    $(".tech_carousel").owlCarousel({
         loop: true,
         autoplay: true,
         autoplayTimeout: 2000,
@@ -103,6 +103,31 @@ $(document).ready(function() {
             }
         },
         items: 4
+    });
+
+    $(".memories_carousel").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        smartSpeed: 450,
+        autoplayHoverPause: false,
+        dots: false,
+        nav: false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            500: {
+                items: 2
+
+            },
+            1000: {
+                items: 3
+
+            }
+        },
+        items: 3
     });
     /* ------------------------------------- */
     /* Animated progress bars

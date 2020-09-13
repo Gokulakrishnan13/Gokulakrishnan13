@@ -3462,11 +3462,18 @@ textarea.form-control {
 
 .filters ul li.active {
     color: #f50136;
-    border: solid 5px #838383;
 }
 
 .filters ul li a.active {
     color: #f50136;
+    padding: 9px;
+    border: solid 1px #f50136;
+    border-bottom: solid 2px #ffffff;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.filters .nav-tabs {
+    border-bottom: solid 1px #f50136;
 }
 
 
@@ -3563,7 +3570,7 @@ section.kz-section-schedule .kz-schedule-container {
 }
 
 .schedule_day1 {
-    border-bottom: 2px solid #fd5479;
+    border-bottom: 1px solid #fd5479;
 }
 
 section.kz-section-schedule .kz-schedule-container .kz-day-container {
@@ -3789,6 +3796,11 @@ section.kz-section-schedule::-webkit-scrollbar-thumb {
 
 .faq.active p:nth-child(2) {
     opacity: 1;
+}
+
+.filters ul li a {
+    font-size: 15px;
+    font-weight: 300;
 }
 
 
