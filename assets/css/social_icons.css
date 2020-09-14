@@ -59,7 +59,7 @@ ul.social-icons {
 }
 
 .card_content {
-    text-align: justify;
+    text-align: justify !important;
 }
 
 .register {

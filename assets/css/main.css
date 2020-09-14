@@ -2116,6 +2116,10 @@ Cover
     color: #ffffff;
 }
 
+.arima_slider_content {
+    background-color: rgba(0, 0, 0, 0.61) !important;
+}
+
 .cover_slider .cover_item .slider_content .slider-content-inner {
     display: table-cell;
     vertical-align: middle;
