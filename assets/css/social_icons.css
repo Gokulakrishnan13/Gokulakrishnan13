@@ -55,7 +55,7 @@ ul.social-icons {
     padding-top: 10px;
     margin-bottom: 8px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .card_content {
