@@ -135,3 +135,11 @@ ul.social-icons {
 .tech_stack a:active {
     cursor: grabbing;
 }
+
+.cover_item {
+    cursor: grab;
+}
+
+.cover_item:active {
+    cursor: grabbing;
+}
