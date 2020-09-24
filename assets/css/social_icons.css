@@ -62,6 +62,21 @@ ul.social-icons {
     text-align: justify !important;
 }
 
+.speaker_content {
+    text-align: center !important;
+}
+
+.speaker_name_content {
+    text-align: center !important;
+    color: black !important;
+    font-size: 17px !important;
+}
+
+.sponsor_card {
+    border: 2px solid #e9573f;
+    border-radius: 30px;
+}
+
 .register {
     color: #f50136;
     background-color: #0ea3e2e7;
