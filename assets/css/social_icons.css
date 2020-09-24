@@ -77,6 +77,16 @@ ul.social-icons {
     border-radius: 30px;
 }
 
+.people_img {
+    max-height: 200px;
+    border-radius: 200px;
+}
+
+.speaker_people_img {
+    max-height: 300px;
+    border-radius: 200px;
+}
+
 .register {
     color: #f50136;
     background-color: #0ea3e2e7;
